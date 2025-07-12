@@ -31,37 +31,37 @@ foreign magic {
 
 magic_t :: distinct rawptr
 
-NONE                :: int(0x0000000) // no flags
-DEBUG               :: int(0x0000001) // turn on debugging
-SYMLINK             :: int(0x0000002) // follow symlinks
-COMPRESS            :: int(0x0000004) // check inside compressed files
-DEVICES             :: int(0x0000008) // look at the contents of devices
-MIME_TYPE           :: int(0x0000010) // return the MIME type
-CONTINUE            :: int(0x0000020) // return all matches
-CHECK               :: int(0x0000040) // print warnings to stderr
-PRESERVE_ATIME      :: int(0x0000080) // restore access time on exit
-RAW                 :: int(0x0000100) // don't convert unprintable characters
-ERROR               :: int(0x0000200) // handle ENOENT etc as real errors
-MIME_ENCODING       :: int(0x0000400) // return the MIME encoding
+NONE                :: 0x0000000 // no flags
+DEBUG               :: 0x0000001 // turn on debugging
+SYMLINK             :: 0x0000002 // follow symlinks
+COMPRESS            :: 0x0000004 // check inside compressed files
+DEVICES             :: 0x0000008 // look at the contents of devices
+MIME_TYPE           :: 0x0000010 // return the MIME type
+CONTINUE            :: 0x0000020 // return all matches
+CHECK               :: 0x0000040 // print warnings to stderr
+PRESERVE_ATIME      :: 0x0000080 // restore access time on exit
+RAW                 :: 0x0000100 // don't convert unprintable characters
+ERROR               :: 0x0000200 // handle ENOENT etc as real errors
+MIME_ENCODING       :: 0x0000400 // return the MIME encoding
 MIME                :: (MIME_TYPE | MIME_ENCODING)
-APPLE               :: int(0x0000800) // return the Apple creator/type
+APPLE               :: 0x0000800 // return the Apple creator/type
 
-NO_CHECK_COMPRESS   :: int(0x0001000) // don't check for compressed files
-NO_CHECK_TAR        :: int(0x0002000) // don't check for tar files
-NO_CHECK_SOFT       :: int(0x0004000) // don't check magic entries
-NO_CHECK_APPTYPE    :: int(0x0008000) // don't check application type
-NO_CHECK_ELF        :: int(0x0010000) // don't check for ELF details
-NO_CHECK_TEXT       :: int(0x0020000) // don't check for text files
-NO_CHECK_CDF        :: int(0x0040000) // don't check for CDF files
-NO_CHECK_CSV        :: int(0x0080000) // don't check for CSV files
-NO_CHECK_TOKENS     :: int(0x0100000) // don't check tokens
-NO_CHECK_ENCODING   :: int(0x0200000) // don't check text encodings
-NO_CHECK_JSON       :: int(0x0400000) // don't check for JSON files
-NO_CHECK_SIMH       :: int(0x0800000) // don't check for SIMH tape files
+NO_CHECK_COMPRESS   :: 0x0001000 // don't check for compressed files
+NO_CHECK_TAR        :: 0x0002000 // don't check for tar files
+NO_CHECK_SOFT       :: 0x0004000 // don't check magic entries
+NO_CHECK_APPTYPE    :: 0x0008000 // don't check application type
+NO_CHECK_ELF        :: 0x0010000 // don't check for ELF details
+NO_CHECK_TEXT       :: 0x0020000 // don't check for text files
+NO_CHECK_CDF        :: 0x0040000 // don't check for CDF files
+NO_CHECK_CSV        :: 0x0080000 // don't check for CSV files
+NO_CHECK_TOKENS     :: 0x0100000 // don't check tokens
+NO_CHECK_ENCODING   :: 0x0200000 // don't check text encodings
+NO_CHECK_JSON       :: 0x0400000 // don't check for JSON files
+NO_CHECK_SIMH       :: 0x0800000 // don't check for SIMH tape files
 
-EXTENSION           :: int(0x1000000) // return a /-separated list of extensions
-COMPRESS_TRANSP     :: int(0x2000000) // check inside compressed files but not report compression
-NO_COMPRESS_FORK    :: int(0x4000000) // don't allow decompression that needs to fork
+EXTENSION           :: 0x1000000 // return a /-separated list of extensions
+COMPRESS_TRANSP     :: 0x2000000 // check inside compressed files but not report compression
+NO_COMPRESS_FORK    :: 0x4000000 // don't allow decompression that needs to fork
 NODESC              :: (EXTENSION | MIME | APPLE)
 
 // no built-in tests; only consult the magic file
