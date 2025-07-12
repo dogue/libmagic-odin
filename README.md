@@ -6,7 +6,6 @@ This package allows you to identify file types and MIME types using `libmagic` d
 
 ## Requirements
 
-- Odin
 - `libmagic` installed (usually via your system package manager)
 
 ## Usage
